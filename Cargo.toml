@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 [workspace]
 resolver = "2"
-members = [
+members = [ "hete",
 "lib",
 "miner",
 "node",

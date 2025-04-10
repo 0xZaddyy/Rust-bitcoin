@@ -4,10 +4,6 @@ use uuid::Uuid;
 use chrono::{DateTime, Utc};
 use crate::U256;
 
-
-// pub struct TransactionInput;
-// pub struct TransactionOutput;
-
 pub struct Blockchain {
     pub blocks: Vec<Block>,
 }
@@ -46,9 +42,6 @@ pub struct TransactionOutput {
     pub pubkey: [u8; 33],
 }
 
-
-
-
 impl Blockchain {
     pub fn new() -> Self {
         Blockchain{blocks: vec![]}
@@ -77,7 +70,6 @@ impl Block {
     
 }
 
-
 impl BlockHeader {
     fn new(
         timestamp: DateTime<Utc>,
@@ -101,16 +93,14 @@ pub fn hash(&self) ->! {
     
 }
 
-
-
 impl Transaction {
     pub fn new(
         inputs: Vec<TransactionInput>,
         outputs: Vec<TransactionOutput>,
     ) -> Self {
         Transaction {
-            inputs: inputs,
-            outputs: outputs,
+            inputs,
+            outputs,
         }
     }
 

@@ -1,5 +1,5 @@
-use crate::U256;
-use core::fmt;
+use primitive_types::U256;
+// use core::fmt;
 use std::fmt;
 use sha256::digest;
 use serde::{Deserialize, Serialize};
@@ -37,7 +37,7 @@ impl Hash {
         Hash(U256::zero())
     }
     impl fmt::Display for Hash {
-        fn fmt(&self fmt::Formatter) -> fmt::Result {
+        fn fmt(&self _: fmt::Formatter) -> fmt::Result {
             write!(f, "{:x}", self.0)
         }
     }

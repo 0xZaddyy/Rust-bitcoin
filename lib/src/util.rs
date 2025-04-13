@@ -15,6 +15,7 @@ use crate::types::Transaction;
 pub struct MerkleRoot(Hash);
 
 impl MerkleRoot {
+    // Calculate the Merkle root of a block's transactions
     pub fn calculate(
         transactions: &[Transaction],
     ) -> MerkleRoot {

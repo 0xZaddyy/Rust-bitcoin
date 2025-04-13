@@ -8,3 +8,7 @@ pub mod util;
 pub mod crypto;
 
 
+construct_uint!{
+    #[derive(Serialize, Deserialize)]
+    pub struct U256(4);
+}

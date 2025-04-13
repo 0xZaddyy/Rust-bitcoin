@@ -4,7 +4,7 @@ use serde::Deserialize;
 use uuid::timestamp;
 use uuid::Uuid;
 use chrono::{DateTime, Utc};
-use crate::U256;
+use primitive_types::U256;
 
 #[derive(Serialize,Deserialize, Clone , Debug)]
 pub struct Blockchain {

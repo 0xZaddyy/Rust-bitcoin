@@ -14,3 +14,4 @@ k256 = { version = "0.13.3", features = ["serde", "pem"] }
 ecdsa = { version = "0.16.9", features = ["signing", "verifying",
 "serde", "pem"] }
 hex = "0.4.3"
+primitive-types = "0.13.1"

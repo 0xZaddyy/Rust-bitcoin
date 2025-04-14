@@ -3,22 +3,12 @@ use serde::{Deserialize, Serialize};
 use crate::sha256::Hash;
 use crate::types::Transaction;
 
-#[derive(
-    Serialize,
-    Deserialize,
-    Clone,
-    Copy,
-    Debug,
-    PartialEq, 
-    Eq,
-)]
+#[derive(Serialize, Deserialize, Clone, Copy, Debug, PartialEq, Eq)]
 pub struct MerkleRoot(Hash);
 
 impl MerkleRoot {
     // Calculate the Merkle root of a block's transactions
-    pub fn calculate(
-        transactions: &[Transaction],
-    ) -> MerkleRoot {
+    pub fn calculate(transactions: &[Transaction]) -> MerkleRoot {
         let mut layer: Vec<Hash> = vec![];
         for transaction in transactions {
             layer.push(Hash::hash(transaction));
@@ -30,7 +20,6 @@ impl MerkleRoot {
                 // if there is no right, use the left hash again
                 let left = pair.get(1).unwrap_or(&pair[0]);
                 new_layer.push(Hash::hash(&[left, *right]));
-                
             }
             layer = new_layer;
         }

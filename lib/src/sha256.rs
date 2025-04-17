@@ -2,7 +2,7 @@ use primitive_types::U256;
 // use core::fmt;
 use serde::{Deserialize, Serialize};
 use sha256::digest;
-use std::fmt;
+// use std::fmt;
 
 #[derive(Clone, Copy, Serialize, Deserialize, Debug, PartialEq, Eq)]
 pub struct Hash(U256);

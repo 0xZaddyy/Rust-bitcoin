@@ -537,6 +537,7 @@ dependencies = [
  "k256",
  "primitive-types",
  "rand 0.9.0",
+ "rand_core 0.9.3",
  "serde",
  "sha256",
  "uint",

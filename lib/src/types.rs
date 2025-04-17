@@ -2,8 +2,9 @@ use crate::crypto::{PublicKey, Signature};
 use crate::sha256::Hash;
 use crate::util::MerkleRoot;
 use chrono::{DateTime, Utc};
+use k256::Secp256k1;
 use primitive_types::U256;
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 use std::vec;
 use uuid::timestamp;
 use uuid::Uuid;
@@ -36,7 +37,7 @@ impl Block {
             transactions: transactions,
         }
     }
-    pub fn hash(&self) -> ! {
+    pub fn hash(&self) -> Hash {
         Hash::hash(self)
     }
 }
@@ -72,8 +73,8 @@ impl BlockHeader {
         }
     }
 
-    pub fn hash(&self) -> ! {
-        unimplemented!()
+    pub fn hash(&self) -> Hash {
+        Hash::hash(self)
     }
 }
 
@@ -88,8 +89,8 @@ impl Transaction {
         Transaction { inputs, outputs }
     }
 
-    pub fn hash(&self) -> ! {
-        unimplemented!()
+    pub fn hash(&self) -> Hash {
+        Hash::hash(self)
     }
 }
 
@@ -113,3 +114,5 @@ impl TransactionOutput {
 
     
 }
+
+

@@ -17,9 +17,9 @@ impl MerkleRoot {
             let mut new_layer = vec![];
             for pair in layer.chunks(2) {
                 let left = pair[0];
-                // if there is no right, use the left hash again
-                let left = pair.get(1).unwrap_or(&pair[0]);
-                new_layer.push(Hash::hash(&[left, * right]));
+                // if there is no right, use the left hash againx
+                let right = pair.get(1).unwrap_or(&pair[0]);
+                new_layer.push(Hash::hash(&[left, *right]));
             }
             layer = new_layer;
         }

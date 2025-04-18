@@ -1,11 +1,15 @@
+#[allow(unused_imports)]
 use crate::crypto::{PublicKey, Signature};
 use crate::sha256::Hash;
+#[allow(unused_imports)]
 use crate::util::MerkleRoot;
 use chrono::{DateTime, Utc};
+#[allow(unused_imports)]
 use k256::Secp256k1;
 use primitive_types::U256;
 use serde::{Deserialize, Serialize};
 use std::vec;
+#[allow(unused_imports)]
 use uuid::timestamp;
 use uuid::Uuid;
 
@@ -111,8 +115,4 @@ impl TransactionOutput {
     pub fn hash(&self) -> Hash {
         Hash::hash(self)
     }
-
-    
 }
-
-
